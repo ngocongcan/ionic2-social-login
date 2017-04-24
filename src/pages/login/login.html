@@ -1,0 +1,29 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Login</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <button ion-button color="primary" full (click)="loginViaFacebook()">
+    <ion-icon name="logo-facebook"></ion-icon>&nbsp;&nbsp;
+    Login with Facebook
+  </button>
+    <button ion-button color="danger" full (click)="loginViaGoogle()">
+    <ion-icon name="logo-googleplus"></ion-icon>&nbsp;&nbsp;
+    Login with Google Plus
+  </button>
+    <button ion-button color="primary" full (click)="loginViaTwitter()">
+    <ion-icon name="logo-twitter"></ion-icon>&nbsp;&nbsp;
+    Login with Twitter
+  </button>
+</ion-content>
