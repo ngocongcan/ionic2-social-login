@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import {  NavController } from 'ionic-angular';
+import { SocialService } from "../../providers/social-service";
 
 /**
  * Generated class for the Login page.
@@ -10,10 +11,13 @@ import {  NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
+  providers : [SocialService]
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private userProfile : string 
+  
+  constructor(public navCtrl: NavController, public socialService: SocialService) {
   }
 
   ionViewDidLoad() {
@@ -22,14 +26,27 @@ export class LoginPage {
 
   loginViaFacebook() {
 
+    this.socialService.facebookLogin().subscribe((res)=> {
+      console.log("loginViaFacebook : ", res);
+      this.userProfile = JSON.stringify(res);
+    }, (err) => {
+      console.log("loginViaFacebook : ", err);
+    })
+
   }
 
   loginViaGoogle() {
-    
+    this.socialService.googlePlusLogin().subscribe((res)=> {
+      console.log("loginViaGoogle : ", res);
+      this.userProfile = JSON.stringify(res);
+    }, (err) => {
+      console.log("loginViaGoogle : ", err);
+    })
   }
 
-  loginViaTwitter() {
-    
+  logout() {
+    this.socialService.logout();
+    this.userProfile = null;
   }
 
 }

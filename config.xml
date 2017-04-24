@@ -44,6 +44,7 @@
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     </platform>
     <platform name="ios">
+        <preference name="KeychainAccessibility" value="WhenUnlocked"/>
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
@@ -86,5 +87,8 @@
     <plugin name="cordova-plugin-facebook4" spec="~1.7.4">
         <variable name="APP_ID" value="296814204090150" />
         <variable name="APP_NAME" value="Ionic2 Social Login" />
+    </plugin>
+    <plugin name="cordova-plugin-googleplus" spec="~5.1.1">
+        <variable name="REVERSED_CLIENT_ID" value="347630520639-jjpcnv4geph483tblf298fn5agae2m7n.apps.googleusercontent.com" />
     </plugin>
 </widget>

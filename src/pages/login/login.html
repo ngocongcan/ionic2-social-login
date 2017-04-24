@@ -6,24 +6,29 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-        <ion-title>Login</ion-title>
-    </ion-navbar>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <button ion-button color="primary" full (click)="loginViaFacebook()">
+  <button ion-button color="primary" full (click)="loginViaFacebook()">
     <ion-icon name="logo-facebook"></ion-icon>&nbsp;&nbsp;
     Login with Facebook
   </button>
-    <button ion-button color="danger" full (click)="loginViaGoogle()">
+  <button ion-button color="danger" full (click)="loginViaGoogle()">
     <ion-icon name="logo-googleplus"></ion-icon>&nbsp;&nbsp;
     Login with Google Plus
   </button>
-    <button ion-button color="primary" full (click)="loginViaTwitter()">
-    <ion-icon name="logo-twitter"></ion-icon>&nbsp;&nbsp;
-    Login with Twitter
+  <br>
+  <br>
+  <div *ngIf="userProfile">
+    Here is user info , you can use it to call RESTFul API <br><br> {{userProfile}}
+  </div>
+  <button *ngIf="userProfile" ion-button color="dark" full (click)="logout()">
+    <ion-icon name="logo-googleplus"></ion-icon>&nbsp;&nbsp;
+    Logout
   </button>
 </ion-content>
